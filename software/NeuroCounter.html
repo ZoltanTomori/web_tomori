@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+    <title>NeuroCounter</title>
+    <link href="../Site.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+        .auto-style1 {
+            float: left;
+        }
+
+        mark {
+            background: lightgray;
+            color: black;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            width: 90%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            font-size: 12px;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="container" style="width: 800px; text-align: left; margin: 10">
+            <div class="ubercolordivider">
+            </div>
+            <div class="divider20" style="height: 20px">
+            </div>
+
+            <div id="Content" align="left" class="auto-style1">
+                <h2>NeuroCounter</h2>
+                NeuroCounter is an image analysis program for semi-automated particles detection and quantification.
+                The user can select several detection methods with different level of interaction (Threshold,
+                Watershed, Fill, Polygon and Circle drawing).<br>
+                Image is split into a grid of counting frames, one of them is selected as active (displayed
+                bold). Program detects particles inside the active frame, outlines their contours and calculates the
+                features like area, diameter, circularity etc. User collects results frame-by-frame sorting them by
+                individual parameters. Final results can be saved in a text format readable by Excel.<br>
+                <br>
+
+                <table>
+                    <tr>
+                        <td> License</td>
+                        <td> Free <a href="http://opensource.org/licenses/BSD-2-Clause">BSD-2-Clause</a> license</td>
+                    </tr>
+                    <tr>
+                        <td>Owner</td>
+                        <td>Institute of Experimental Physics, SAS</td>
+                    </tr>
+                    <tr>
+                        <td>Contact</td>
+                        <td>tomori@saske.sk</td>
+                    </tr>
+                    <tr>
+                        <td>Copyright</td>
+                        <td>(c)) Copyright 2018, IEP_SAS</td>
+                    </tr>
+                </table>
+
+
+                <div class="divider20" style="height: 20px"></div>
+                <!----------------------------------------------------->
+
+                <h3>Download and installation (Windows 10 and later required)</h3>
+                <ul>
+                    <li>If you have not installed yet, <a href="http://home.saske.sk/~tomori/software/IEP_SAS.cer"
+                            download="IEP_SAS.cer">download certification file</a> of our institute ('IEP_SAS.cer') and
+                        install it. Use options: "Local computer", Browse, then select "Trusted people".</li>
+                    </li>
+                    <li> Install program using <a
+                            href="ms-appinstaller:?source=http://home.saske.sk/~tomori/software/NeuroCounter/NeuroCounter_1.5.5.0_x64.appxbundle">
+                            this link </a>. </li>
+                </ul>
+                <div class="divider20" style="height: 20px"></div>
+                <!----------------------------------------------------->
+
+                <!-- Demo 1 -->
+                <h3>Quick start</h3>
+                <h4>Demo 1</h4>
+                <div>
+                    <ol type="1">
+                        <li>In <b>File</b> menu, open 'Demo.jpg' sample image file).
+                        <li>In <b>Detection</b> menu:
+                            <ul type="a">
+                                <li>Select a counting frame in first row and second column by <i>Shift+Left mouse
+                                        button</i> click. Keep default values of all controls unchanged and press button
+                                    <mark>Detect</mark>. Program paints detected cells green. </li>
+                                <li>Press <mark>Select all</mark> and then <mark>Lock</mark> buttons.</li>
+                                <li>Select counting frame in first row and third column and repeat the same steps.</li>
+                            </ul>
+                        <li>Switch to <b>Results</b> menu mode which displays the total number of counted cells in all
+                            (two) already processed frames (Figure 1).</li>
+                        <li>Switch to <b>File</b> menu again and <mark>Save</mark> results in text format readable by
+                            e.g. Excel.</li>
+                    </ol>
+                </div>
+
+                <!--Figure 1 -->
+                <div class="center">
+                    <img src="../images/Demo1.png" alt="img" width="700">
+                    <h5>Figure 1. Simple detection of cells in first row of counting frames. The <i>Counts</i> on the
+                        left side displays the number of cells in selected frame and in all frames (equal to estimated
+                        because the counting frames cover 100% of image area) </h5>
+                    <div class="divider20" style="height: 10px"></div>
+                </div>
+
+                <!-- Demo2 -->
+                <h4>Demo 2 </h4>
+                <div>
+                    <ol type="1">
+                        <li>In <b>File</b> menu, open 'Demo.jpg' sample image file). Try zoom (CTRL+mouse wheel) and
+                            scroll (CTRL+left mouse button)</li>
+                        <li>In <b>Image</b> menu:<br>
+                            <ul>
+                                <li><b>Define Area of interest (AOI)</b> by pressing <mark>Outline area</mark>
+                                    button and clicking points (polygon vertices) around the larger structure on the
+                                    image. If finished, close polygon by the same button and adjust its shape by the
+                                    slider under <mark>Outline area</mark> button.</li>
+                                <li><b>Adjusting of counting frames</b> is possible by <i>Distance</i> and
+                                    <i>Size</i> sliders and <mark>Random</mark> button. In the default
+                                    configuration (Size=Distance) the counting frames cover 100% of AOI area.
+                                </li>
+                                <li><b>Calibrate</b> system if you want to display values in real units. Use
+                                    <mark>Draw line</mark> to find the correspondence between the drawn line length
+                                    in pixels and real units in <i>microns</i>.</li>
+                            </ul>
+                        </li>
+
+                        <li>In <b>Detection</b> menu:
+                            <ul type="a">
+                                <li>Select a counting frame in first row and second column by <i>Shift+Left mouse
+                                        button</i> click. Keep default values of all controls unchanged and press
+                                    button <mark>Detect</mark>. Program paints detected cells green.
+                                    Press <mark>Zoom frame</mark> to see details of detected contours.</li>
+                                <li>Change available sliders <i>Threshold, Circularity and Size</i> and watch their
+                                    influence to the detection results.
+                                    While <i>Threshold</i> slider is related to the Watershed detection method, the
+                                    other two sliders filter cells having circularity and size outside the given
+                                    limits.
+                                </li>
+                                <li>Select a group of cells by left mouse click or by drawing rectangle bounding
+                                    them. Selected particles (drawn orange) can be removed by <mark>Delete</mark> or
+                                    corrected by <mark>Adjust></mark>, <mark>Inflate</mark> or <mark>Deflate</mark>
+                                    buttons. An alternative way to delete wrongly detected particles is to use right
+                                    mouse click. <mark>Check</mark> button reveals the overlapped contours and
+                                    allows their deleting</li>
+                                <li>Change <i>Mode</i> of operation from <i>Watershed</i> to <i>Fill</i>. Clicking
+                                    the interior of a not detected cell, algorithm detects the particle inside the
+                                    red circle (see Figure 2).
+                                </li>
+                                <li>If <i>Watershed</i> or <i>Fill</i> modes fail, switch to <i>Polygon</i> or
+                                    <i>Circle</i> and manually enter polygon vertices or circle position (its
+                                    diameter can be changed by mouse wheel).
+                                </li>
+                                <li>Press <mark>Select all</mark> and then <mark>Lock</mark> buttons.
+                                    Locked contours
+                                    can be saved ( <mark>Save</mark> or <mark>Append</mark> buttons in <b>File</b>
+                                    menu ) and subsequently released from memory (by <mark>Reset</mark>
+                                    button) which speeds-up program execution. Warning: Selection of another
+                                    counting frame during processing deletes all unlocked cells from the current
+                                    counting frame.
+                                </li>
+                                <li>Repeat described steps for all relevant counting frames.
+                                </li>
+                            </ul>
+                        <li> Switch to <b>Results</b> menu item, select sorting by <i>Area</i>. Use the slider to
+                            set a value for the <mark>Split</mark> operation. Figure 3 demonstrates splitting all
+                            cells into three categories according to their area. <mark>Reset</mark> button clears the
+                            selection for a new settings.
+                        </li>
+                        <li>Switch to <b>File</b> menu again and <mark>Save</mark> results in text format
+                            readable by e.g. Excel.</li>
+                    </ol>
+                </div>
+                <div class="center">
+                    <img src="../images/Demo2.png" alt="img" height="250">
+                    <img src="../images/grid.png" alt="img" height="250">
+                    <h5>Figure 2, Left: Zoomed counting frame. Particles not found by automated <i>Watershed</i> method
+                        are detected by semi-interactive <i>Fill</i> mode (search for the maximal gradient contour
+                        inside red cursor) or by manual enter in <i>Polygon</i> or <i>Circle</i> mode.
+                        Right: Counting frames where <i>Distance</i> = 2 X <i>Size</i>.
+                    </h5>
+                    <div class="divider20" style="height: 10px"></div>
+                    <img src="../images/sorted.png" alt="img" width="500">
+                    <h5>Figure 3. Sorting of cells into three categories by their area</h5>
+                    <div class="divider20" style="height: 10px"></div>
+                </div>
+
+                <!----------------------------------------------------->
+                <!-- Demo3 -->
+                <h4>Demo 3 </h4>
+                <div>
+                    <ol type="1">
+                        <li>In <b>File</b> menu, open 'Demo.jpg' sample image file). Try zoom (CTRL+mouse wheel) and
+                            scroll (CTRL+left mouse button)</li>
+                        <li>In <b>Image</b> menu:<br>
+                            <ul>
+                                <li><b>Define Area of interest</b> by pressing <mark>Outline area</mark> button
+                                    and clicking points (polygon vertices) around the larger structure on the image. If
+                                    finished, close polygon by the same button and adjust its shape by the slider under
+                                    <mark>Outline area</mark> button.</li>
+                                <li><b>Adjusting of counting frames</b> is possible by <i>Distance</i> and
+                                    <i>Size</i> sliders and <mark>Random</mark> button. Keep <i>Distance</i>
+                                    unchanged but change <i>Size</i> to one half (cca. 256) as shown on Figure
+                                    2 right. It means that the estimated total area is 4 x the area of counting
+                                    frames.
+                                </li>
+                                <li><b>Calibrate</b> system if you want to display values in real units. Use
+                                    <mark>Draw line</mark> to find the correspondence between the drawn line length
+                                    in pixels and real units in <i>microns</i>.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            In <b>Tools</b> menu:
+                            <ul type="">
+                                <li>Repeatedly <mark>Run</mark> the stereological counting frames
+                                    test and watch how the estimated value converges to the generated one.
+                                    In every cycle, program generates 1000 random positions and counts these lying
+                                    inside counting frames. This value multiplied by 4 estimates the total count and
+                                    should converge to 1000 on the average.</li>
+                                <li>External program exploiting Deep Neural Network U-net architecture requires
+                                    training set consisting of annotated images. Both can be exported by
+                                    <mark>Images</mark> and <mark>Labels</mark> buttons. This feature is currently
+                                    under testing.</li>
+                            </ul>
+                        </li>
+                        <li> You can continue with the <b>Detect</b> and <b>Results</b> menu by the same manner as in
+                            Demo 2.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>
